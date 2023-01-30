@@ -113,3 +113,9 @@
 .product__item:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 } 
+
+.pagination__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
