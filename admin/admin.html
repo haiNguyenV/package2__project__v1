@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://kit.fontawesome.com/925cb3b126.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="adminHeader">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Admin</a></li>
+            </ul>
+            <button id="logout__btn"><i class="fa fa-sharp fa-solid fa-arrow-right"></i> Logout</button>
+        </div>    
+        <div class="content">
+            <div class="content__search">
+                <input id="textField" type="text" placeholder="Nhập tên sản phẩm cần tìm kiếm...">
+                <button id="search">search</button>
+            </div>
+            <div class="content__product-List">
+                <button id="content__add-new-btn" class="content__add-new-btn">Add new</button>
+                <div class="content__product-items">
+                    <table class="content__products-table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Info</th>
+                            <th>Detail</th>
+                            <th>Star</th>
+                            <th>Image</th>
+                            <th>NSX</th>
+                            <th>Category</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>
