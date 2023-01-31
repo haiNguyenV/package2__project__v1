@@ -202,6 +202,7 @@ $(document).ready(()=> {
     
     /*sự kiện log out khỏi trang quản trị*/
     $('#logout__btn').click(() => {
-        alert('logout')
+        localStorage.removeItem("accessToken");
+        window.location.replace("login.html");
     })
 });

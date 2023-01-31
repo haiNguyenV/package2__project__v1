@@ -4,7 +4,24 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    outline: none !important;
 }
+
+/*cho bootstrap*/
+.col-0-padding {
+    padding: 0 !important;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+/*---*/
+
+/*chung*/
+button {
+    cursor: pointer;
+}
+/**/
 
 .adminHeader {
     background-color: rgb(183, 228, 224);
@@ -36,10 +53,6 @@
     background-color: transparent;
 }
 
-.content {
-    padding-top: 20px;
-}
-
 .content__search {
     width: 100%;
     text-align: center;
@@ -58,6 +71,7 @@
     background-color: rgb(183, 228, 224);
     padding: 12px 15px;
     transition: .5s;
+    outline: none!important;
 }
 
 .content__search button:hover {
@@ -202,4 +216,59 @@
     right: 30px;
     border: none;
     background-color: transparent;
+}
+
+/*SIDE BAR*/
+.side-bar__menu {
+    width: 100%;
+
+}
+
+.side-bar__menu h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.side-bar__menu li {
+    list-style: none;
+    border: 1px solid rgb(78, 78, 78);
+    border-bottom: none;    
+    padding: 8px 15px;
+}
+
+.side-bar__menu li:last-child {
+    border-bottom: 1px solid rgb(78, 78, 78);
+}
+
+.side-bar__menu a {
+    color: #000;
+    text-decoration: none;
+}
+
+.side-bar__menu a:hover {
+    text-decoration: none;
+}
+
+.side-bar__menu:nth-child(2) a {
+    text-transform: uppercase;
+}
+
+.side-bar__category {
+    border: 1px solid rgb(78, 78, 78);
+    padding: 20px;
+}
+
+.side-bar__category select, .side-bar__category button {
+    width: 100%;
+}
+
+.side-bar__category select {
+    margin-bottom: 20px;
+    padding: 8px 4px;
+}
+
+.side-bar__category button {
+    border: 1px solid rgb(78, 78, 78);
+    background-color: transparent;
+    cursor: pointer;
 }
