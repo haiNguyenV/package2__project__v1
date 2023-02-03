@@ -73,13 +73,12 @@ const getProducts = (page, size) => {
     
                 for(let j = 0; j < val.rated; j++) {
                     $('.star__rated__'+i+' i:nth-child('+(j+1)+')')[0].style.color = '#ffa500';
-                    console.log($('.star__rated__'+i+' i:nth-child('+(j+1)+')'))
                 }
             })
 
             //pagination
             const totalPages = data.totalPages;
-            const pages = paging(page+1, 5, totalPages);
+            const pages = paging(page+1, 11, totalPages);
             $('.pagination').empty();
             for(let i = 0; i< pages.length; i++){
                 let pageElementTemplate = `<li class="page-item"><span class="page-link">${pages[i]}</span></li>`;
