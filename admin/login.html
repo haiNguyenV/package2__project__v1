@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 500px;
+            height: 300px;
+            background-color: #BFEAF5;
+            border-radius: 20px;
+            margin: 100px auto;
+            padding: 50px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            color: #0A2647;
+        }
+
+        input {
+            display: block;
+            border: 1px solid rgb(150, 150, 150);
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 30px;
+            border-radius: 5px;
+            background-color: #82AAE3;
+            transition: .5s;
+            min-width: 100px;
+        }
+
+        button:hover {
+            background-color: #91D8E4;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Đăng nhập</h1>
+        <input type="text" name="userName" id="username" placeholder="nhập user-name của bạn...">
+        <input type="password" name="password" id="password" placeholder="nhập password của bạn...">
+        <div class="button">
+            <button id="login">Đăng nhập</button>
+            <button id="cancel">Hủy</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $('document').ready(() => {
+            const checkLogin = ()=> {
+                const accessToken = localStorage.getItem('accessToken');
+                if(accessToken) {
+                    window.location.replace("admin.html");
+                } else {
+                    //sự kiện xảy ra khi nhấn nút đăng nhập
+                    $('#login').click(() => {
+                        const userName = $('#username').val().trim();
+                        const passWord = $('#password').val().trim();
+                        login(userName, passWord);
+                    })
+                }
+            }
+
+            const login = (username, password) => {
+                $.ajax({
+                    url: 'http://vti-ecommerce.foxcode.site/api/v1/auth/login',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({username, password}),
+                    success: (data) => {
+                        localStorage.setItem('accessToken', data.accessToken);
+                        window.location.replace("admin.html");
+                    }, 
+                    error: (error) => {                
+                        alert('Đã có lỗi xảy ra, vui lòng thử lại!');
+                    }
+                })
+            }
+            checkLogin();
+
+            
+            //sự kiện khi nhấn nút cancel
+            $('#cancel').click(() => {
+                $('#username').val('');
+                $('#password').val('');
+            })
+        })
+    </script>
+</body>
+</html>
